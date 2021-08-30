@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.NoteEntryPage"
+             Title="Entrada de Nota">
+
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    
+    
+    
+    
+    
+    <!-- Layout children vertically-->
+    <StackLayout Margin ="20">
+        <Editor Placeholder="Digite sua anotação"
+                Text="{Binding Text}"
+                HeightRequest="100"/>
+        <!--Layout children in two columns-->
+        <Grid ColumnDefinitions="1*,1*,1*">
+            <Button Grid.Column ="0"
+                    Text="Salvar"
+                    Clicked="OnSaveButtonClicked"/>
+            <Button Grid.Column="1"
+                    Text="Deletar"
+                    Clicked="OnDeleteButtonClicked"/>
+            <Button Grid.Column ="2"
+                    Text="Voltar"
+                    Clicked="OnVoltarButtonClicked"/>
+
+        </Grid>
+
+    </StackLayout>
+</ContentPage>
